@@ -280,11 +280,11 @@ Transform:
   m_GameObject: {fileID: 65253837}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.09913647, y: 1.082799, z: 0.018767644}
+  m_LocalPosition: {x: -2.0344687, y: -3.2689822, z: -0.022108853}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 181432060}
+  m_Father: {fileID: 288339645}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &119483565
 GameObject:
@@ -350,7 +350,6 @@ Transform:
   - {fileID: 1376688258}
   - {fileID: 639439665}
   - {fileID: 607226521}
-  - {fileID: 65253838}
   - {fileID: 1520668312}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -835,6 +834,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 65253838}
   - {fileID: 950918741}
   m_Father: {fileID: 181432060}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1436,7 +1436,8 @@ MonoBehaviour:
   useAngleLimits: 1
   minAngle: -260
   maxAngle: 81
-  flipSmoothing: 2
+  flipSmoothing: 0.15
+  virtualCursorSpeed: 68.2
 --- !u!70 &607226525
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1773,7 +1774,9 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4448987518102376, guid: 59d2add27d8c11445813c5dbdecf16ab, type: 3}
+    - {fileID: 8727867690381851808, guid: 59d2add27d8c11445813c5dbdecf16ab, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1955,6 +1958,7 @@ MonoBehaviour:
   minAngle: -45
   maxAngle: 90
   flipSmoothing: 0.15
+  virtualCursorSpeed: 15
 --- !u!50 &953841262
 Rigidbody2D:
   serializedVersion: 4
@@ -2809,7 +2813,7 @@ GameObject:
   - component: {fileID: 1591973267}
   m_Layer: 7
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2928,7 +2932,7 @@ GameObject:
   - component: {fileID: 1692268346}
   m_Layer: 7
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2966,7 +2970,7 @@ MonoBehaviour:
   footOffset: -90
   adjustmentStrength: 1
   adjustmentMin: -50
-  adjustmentMax: 0
+  adjustmentMax: -30
 --- !u!1 &1837279922
 GameObject:
   m_ObjectHideFlags: 0
