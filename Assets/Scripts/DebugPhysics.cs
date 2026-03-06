@@ -17,7 +17,7 @@ public class DebugVelocity2D : MonoBehaviour
     {
         if (rb != null)
         {
-            Debug.Log($"[Velocity Debug] {gameObject.name} | Velocity: {rb.velocity} | Speed: {rb.velocity.magnitude:F2} | Angular Velocity: {rb.angularVelocity:F2}");
+            Debug.Log($"[Velocity Debug] {gameObject.name} | Velocity: {rb.linearVelocity} | Speed: {rb.linearVelocity.magnitude:F2} | Angular Velocity: {rb.angularVelocity:F2}");
         }
     }
 }

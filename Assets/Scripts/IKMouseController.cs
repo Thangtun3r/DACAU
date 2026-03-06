@@ -84,7 +84,7 @@ public class IKTargetMouseFollow : MonoBehaviour
 
         // --- Drive rigidbody toward virtual cursor ---
         Vector2 targetPosition = basePos + clampedDir * clampedDist;
-        targetRB.velocity = (targetPosition - targetRB.position) * followSpeed;
+        targetRB.linearVelocity = (targetPosition - targetRB.position) * followSpeed;
     }
 
     void OnDrawGizmos()

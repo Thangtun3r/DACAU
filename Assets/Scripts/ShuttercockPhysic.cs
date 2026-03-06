@@ -48,12 +48,12 @@ public class JianziPhysics : MonoBehaviour
         AlignRotationToVelocity();
 
         // Clamp overall velocity to prevent tunneling issues.
-        rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxSpeed);
+        rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity, maxSpeed);
 
         // Clamp the downward speed (y-axis) to the maximum allowed.
-        if (rb.velocity.y < -maxDownwardSpeed)
+        if (rb.linearVelocity.y < -maxDownwardSpeed)
         {
-            rb.velocity = new Vector2(rb.velocity.x, -maxDownwardSpeed);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, -maxDownwardSpeed);
         }
     }
 
@@ -63,7 +63,7 @@ public class JianziPhysics : MonoBehaviour
     /// </summary>
     void ApplyAerodynamicDrag()
     {
-        Vector2 velocity = rb.velocity;
+        Vector2 velocity = rb.linearVelocity;
         float speed = velocity.magnitude;
         
         if (speed > 0.01f)
@@ -92,7 +92,7 @@ public class JianziPhysics : MonoBehaviour
     /// </summary>
     void ApplyDownforce()
     {
-        float speed = rb.velocity.magnitude;
+        float speed = rb.linearVelocity.magnitude;
         if (speed > 0.01f)
         {
             float downforceMagnitude = 0.5f * airDensity * speed * speed * downforceCoefficient * frontalArea;
@@ -105,7 +105,7 @@ public class JianziPhysics : MonoBehaviour
     /// </summary>
     void AlignRotationToVelocity()
     {
-        Vector2 velocity = rb.velocity;
+        Vector2 velocity = rb.linearVelocity;
         float speed = velocity.magnitude;
     
         // Only adjust rotation if there is enough movement.

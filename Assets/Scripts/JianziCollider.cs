@@ -36,7 +36,7 @@ public class JianziCollider : MonoBehaviour
         lastCollisionTime = Time.time;
         float impactForce = collision.relativeVelocity.magnitude;
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        float currentSpeed = rb.velocity.magnitude;
+        float currentSpeed = rb.linearVelocity.magnitude;
         
         if (collision.collider.CompareTag(targetTag) &&
             impactForce > impactThreshold &&
@@ -87,7 +87,7 @@ public class JianziCollider : MonoBehaviour
             if (collision.collider.CompareTag(groundTag))
             {
                 transform.position = JianziOriginalTransform;
-                rb.velocity = Vector2.zero;
+                rb.linearVelocity = Vector2.zero;
                 Scoreboard.ResetScore();
             }
         }

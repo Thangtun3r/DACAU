@@ -56,12 +56,12 @@ public class CursorMovementController : MonoBehaviour
             Vector2 targetVelocity = direction * moveSpeed;
 
             // Smoothly interpolate the current velocity toward the target velocity.
-            rb.velocity = Vector2.Lerp(rb.velocity, targetVelocity, damping * Time.deltaTime);
+            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, targetVelocity, damping * Time.deltaTime);
         }
         else
         {
             // When the cursor is within the allowed distance, gently damp the velocity to zero.
-            rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, damping * Time.deltaTime);
+            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, Vector2.zero, damping * Time.deltaTime);
         }
     }
 }
