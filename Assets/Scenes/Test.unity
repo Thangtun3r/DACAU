@@ -988,7 +988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseTransform: {fileID: 288339645}
   slidingObject: {fileID: 288339645}
-  virtualCursor: {fileID: 293381742}
+  virtualCursorMarker: {fileID: 293381742}
   cursorDeadzoneRadius: 0
   virtualCursorSmoothSpeed: 111111
   chainLength: 5
@@ -1194,6 +1194,50 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.18819255, y: 2.8377542, z: -0.0026109652}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &475050212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 475050214}
+  - component: {fileID: 475050213}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &475050213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475050212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336368612df9623499b70c098d1bd560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+--- !u!4 &475050214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475050212}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.82198, y: 7.63546, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1647,6 +1691,10 @@ PrefabInstance:
       value: 1.4278986
       objectReference: {fileID: 0}
     - target: {fileID: 497320362512504682, guid: 59d2add27d8c11445813c5dbdecf16ab, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 497320362512504682, guid: 59d2add27d8c11445813c5dbdecf16ab, type: 3}
       propertyPath: speedThreshold
       value: 3
       objectReference: {fileID: 0}
@@ -1718,9 +1766,7 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4448987518102376, guid: 59d2add27d8c11445813c5dbdecf16ab, type: 3}
-    - {fileID: 8727867690381851808, guid: 59d2add27d8c11445813c5dbdecf16ab, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1804,6 +1850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TraiCauThrow
   traiCau: {fileID: 1461421116}
+  spawnPoint: {fileID: 0}
   throwForce: 10
   throwDirection: {x: 0, y: 1}
 --- !u!1 &886831682
@@ -3315,6 +3362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virtualCamera: {fileID: 0}
   shakeDuration: 0.2
+  shakeTimer: 0
   minAmplitude: 10
   maxAmplitude: 100
   minFrequency: 1
@@ -3322,6 +3370,10 @@ MonoBehaviour:
   minImpact: 4
   maxImpact: 100
   dampingSpeed: 10
+  noise: {fileID: 0}
+  originalAmplitude: 0
+  targetAmplitude: 0
+  targetFrequency: 0
 --- !u!4 &1947351539
 Transform:
   m_ObjectHideFlags: 0
@@ -5959,3 +6011,4 @@ SceneRoots:
   - {fileID: 228984558}
   - {fileID: 765861966}
   - {fileID: 882731406}
+  - {fileID: 475050214}

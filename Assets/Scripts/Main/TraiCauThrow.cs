@@ -4,13 +4,11 @@ public class TraiCauThrow : MonoBehaviour
 {
     [Header("References")]
     public GameObject traiCau;
+    public Transform  spawnPoint;
 
     [Header("Throw Settings")]
-    public float throwForce = 10f;
+    public float   throwForce     = 10f;
     public Vector2 throwDirection = Vector2.up;
-
-    [Header("Spawn")]
-    public Transform spawnPoint;
 
     void Update()
     {
@@ -26,9 +24,7 @@ public class TraiCauThrow : MonoBehaviour
             return;
         }
 
-        Vector3 spawnPos = spawnPoint != null ? spawnPoint.position : transform.position;
-
-        traiCau.transform.position = spawnPos;
+        traiCau.transform.position = spawnPoint != null ? spawnPoint.position : transform.position;
         traiCau.SetActive(true);
 
         Rigidbody2D rb = traiCau.GetComponent<Rigidbody2D>();
